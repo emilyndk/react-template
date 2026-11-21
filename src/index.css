@@ -1,6 +1,22 @@
 /* 1. Importer dine fonte fra Google Fonts (skift dem ud når du starter et nyt projekt) */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700&display=swap");
 
+/* 1.1 Guide til egne downloadede fonte (.woff2, .ttf eller .otf):
+   1. Læg din font-fil i mappen public/fonts/ (f.eks. public/fonts/MinFont.woff2).
+   2. Udkommentér @font-face herunder og ret font-family samt filnavnet.
+   3. Har du både Regular og Bold, så lav to @font-face blokke med samme font-family,
+      men med font-weight: 400 på Regular og font-weight: 700 på Bold.
+   4. Brug navnet nede i @theme (f.eks. --font-display: "MinFont", sans-serif;).
+
+@font-face {
+  font-family: "MinFont";
+  src: url("/fonts/MinFont.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+
 /* 2. Indlæs Tailwind v4 */
 @import "tailwindcss";
 
@@ -13,7 +29,7 @@
   --color-ink: #0f172a;
   --color-muted: #64748b;
 
-  /* Fonte */
+  /* Fonte (skift til "MinFont" her, hvis du bruger din egen downloadede font) */
   --font-sans: "Inter", system-ui, sans-serif;
   --font-display: "Plus Jakarta Sans", sans-serif;
 
