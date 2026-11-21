@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { Outlet } from "react-router";
 
 gsap.registerPlugin(useGSAP);
 
@@ -14,9 +15,14 @@ export default function App() {
 
   return (
     <div ref={container} className="min-h-screen p-8">
-      <h1 className="font-display text-3xl font-bold text-brand">
-        Klar til at bygge
-      </h1>
+      {/* Fast menu i toppen (bliver altid stående) */}
+      <nav className="flex gap-4 mb-8 border-b pb-4">
+        <Link to="/">Forside</Link>
+        <Link to="/about">Om os</Link>
+      </nav>
+
+      {/* <Outlet /> er hullet */}
+      <Outlet />
     </div>
   );
 }
